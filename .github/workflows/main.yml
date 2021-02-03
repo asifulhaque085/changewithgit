@@ -33,6 +33,6 @@ jobs:
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          ftp-server: sftp://185.151.30.170
+          ftp-server: sftp://182.48.82.214 
           ftp-username: changewithgit@changewithgit.smartpay.global
           ftp-password: ${{ secrets.prod_FTP_PASSWORD }}
