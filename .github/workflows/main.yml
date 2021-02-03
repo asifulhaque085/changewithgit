@@ -2,39 +2,17 @@ on:
   push:
     branches:
       - master
-name: 🚀 Deploy website on push
+name: Production Deploy
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v2.3.2
-
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@4.0.0
-      with:
-        server: ftp://185.151.30.170
-        username: changewithgit@changewithgit.smartpay.global
-        password: ${{secrets.prod_FTP_PASSWORD}}
-
-# on:
-#   push:
-#     branches:
-#       - master
-# name: 🚀 Production Deploy
-# jobs:
-#   FTP-Deploy-Action:
-#     name: FTP-Deploy-Action
-#     runs-on: ubuntu-latest
-#     steps:
-#     - uses: actions/checkout@v2.3.2
-#       with:
-#         fetch-depth:2
-#     - name: FTP-Deploy-Action
-#       uses:
-#       with:
-#         ftp-server: ftp://185.151.30.170
-#         ftp-username: changewithgit@changewithgit.smartpay.global
-#         ftp-password: ${{secrets.prod_FTP_PASSWORD}}
-      
+      - uses: actions/checkout@v2.3.2
+        with: fetch-depth:2
+      - name: FTP-Deploy-Action
+        uses:
+        with:
+          ftp-server: ftp://185.151.30.170
+          ftp-username: changewithgit@changewithgit.smartpay.global
+          ftp-password: ${{secrets.prod_FTP_PASSWORD}}
