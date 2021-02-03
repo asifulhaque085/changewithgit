@@ -13,7 +13,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: 185.151.30.170
+        server: 185.151.30.178.987
         username: changewithgit@changewithgit.smartpay.global
         password: ${{secrets.prod_FTP_PASSWORD}}
 
