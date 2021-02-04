@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    hello i am from changewithgit website. it should be in server (28 trial)
+    hello i am from changewithgit website. it should be in server (29 trial)
   </body>
 </html>
 
@@ -47,5 +47,30 @@
 #         with:
 #           ftp-server: sftp://182.48.82.214:22
 #           ftp-username: changewithgit@changewithgit.smartpay.global
-#           ftp-password: ${{ secrets.prod_FTP_PASSWORD }}
- -->
+#           ftp-password: ${{ secrets.prod_FTP_PASSWORD }} -->
+
+
+
+
+
+
+
+<!-- on:
+  push:
+    branches:
+      - master
+name: Production Deploy
+jobs:
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
+      - name: FTP-Deploy-Action
+        uses: SamKirkland/FTP-Deploy-Action@3.1.1
+        with:
+          ftp-server: ftp://182.48.82.214
+          ftp-username: changewithgit@changewithgit.smartpay.global
+          ftp-password: ${{ secrets.prod_FTP_PASSWORD }} -->
