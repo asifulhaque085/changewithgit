@@ -15,5 +15,5 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
           ftp-server: ftp://ftp.smartpay.global/changewithgit/
-          ftp-username: changewithgit@changewithgit.smartpay.global
+          ftp-username: smartpay.global
           ftp-password: ${{ secrets.prod_FTP_PASSWORD }}
