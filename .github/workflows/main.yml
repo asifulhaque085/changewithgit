@@ -17,22 +17,44 @@
 #         username: changewithgit@changewithgit.smartpay.global
 #         password: ${{secrets.prod_FTP_PASSWORD}}
 
-on:
-  push:
-    branches:
-      - master
-name: Production Deploy
+# on:
+#   push:
+#     branches:
+#       - master
+# name: Production Deploy
+# jobs:
+#   FTP-Deploy-Action:
+#     name: FTP-Deploy-Action
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2.1.0
+#         with:
+#           fetch-depth: 2
+#       - name: FTP-Deploy-Action
+#         uses: SamKirkland/FTP-Deploy-Action@3.1.1
+#         with:
+#           ftp-server: sftp://182.48.82.214:22 
+#           ftp-username: changewithgit@changewithgit.smartpay.global
+#           ftp-password: ${{ secrets.prod_FTP_PASSWORD }}
+
+
+
+
+
+on: push
+name: Publish Website
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.1.0
-        with:
-          fetch-depth: 2
+    - uses: actions/checkout@v2.1.0
+      with:
+        fetch-depth: 2
       - name: FTP-Deploy-Action
         uses: SamKirkland/FTP-Deploy-Action@3.1.1
         with:
-          ftp-server: sftp://182.48.82.214:22 
+          ftp-server: ftp://182.48.82.214
           ftp-username: changewithgit@changewithgit.smartpay.global
           ftp-password: ${{ secrets.prod_FTP_PASSWORD }}
+          local-dir: changewithgit
