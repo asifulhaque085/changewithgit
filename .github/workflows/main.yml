@@ -44,7 +44,7 @@ on:
   push:
     branches:
       - master
-name: Publish Website
+name: Production Deploy
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
